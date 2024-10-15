@@ -1,13 +1,10 @@
-<html>
-    <head>
-        <title>Список блюд</title>
-    </head>
-    <body>
-        <h1>Список блюд</h1>
+{% extends 'base.html' %}
+{% block title %}Dishes{% endblock %}
+{% block content %}
+        <h1>Dish list</h1>
         <ul>
             {% for dish in all_dishes %}
                 <li>{{ dish.name }} - {{ dish.price }}</li>
             {% endfor %}
         </ul>
-    </body>
-</html>
+{% endblock %}

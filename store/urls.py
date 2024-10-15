@@ -4,9 +4,9 @@ from store import views
 urlpatterns = [
     path("", views.index, name="index"),
     path("dishes/", views.dishes, name="dishes"),
-    path("dish/<pk>", views.dish_detail, name="dish_detail"),
-    path("dish/", views.dish_create, name="dish_create"),
-    path("update_dish/<pk>", views.dish_update, name="dish_update"),
+    path("dish/<int:pk>/", views.dish_detail, name="dish_detail"),
+    path("dish/add/", views.dish_create, name="dish_create"),
+    path("dish/<int:pk>/update/", views.dish_update, name="dish_update"),
 
     path('customers/', views.customer_list, name='customer_list'),
     path('customers/<int:pk>/', views.customer_detail, name='customer_detail'),
