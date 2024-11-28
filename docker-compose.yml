@@ -1,0 +1,28 @@
+services:
+  web:
+    build: .
+    command: python manage.py migrate
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgres://test:your_password@db:5432/store-db
+    volumes:
+      - .:/code
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: store-db
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+networks:
+  django_network:
+    driver: bridge
+
+volumes:
+  postgres_data:

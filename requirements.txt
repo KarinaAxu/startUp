@@ -1,0 +1,9 @@
+Django==4.2.15
+djangorestframework==3.15.2
+<<<<<<< HEAD
+djangorestframework-simplejwt
+gunicorn==23.0.0
+psycopg2-binary==2.9.9
+django-filter
+=======
+>>>>>>> eafb986a58cf6441ea3a5ec162772c32a4edb147
