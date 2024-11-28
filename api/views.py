@@ -64,7 +64,6 @@ class RestaurantRetrieveUpdateDestroyView(RetrieveUpdateDestroyAPIView):
 #     authentication_classes = ()
 #     permission_classes = (permissions.AllowAny, )
 #
-#
 # class RestaurantDetail(generics.RetrieveAPIView):
 #     queryset = Restaurant.objects.all()
 #     serializer_class = RestaurantSerializer
