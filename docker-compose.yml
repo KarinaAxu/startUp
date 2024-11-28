@@ -6,7 +6,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: store-db
     networks:
-      - mynetwork  # This references the network
+      - mynetwork
 
   web:
     build: .
@@ -18,8 +18,8 @@ services:
     depends_on:
       - db
     networks:
-      - mynetwork  # This references the same network
+      - mynetwork
 
 networks:
   mynetwork:
-    driver: bridge  # This defines the network
+    driver: bridge
