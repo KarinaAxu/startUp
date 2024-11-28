@@ -1,8 +1,5 @@
-from django.contrib.auth.models import User
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import User, AbstractUser
 from django.db import models
-from django.db.models import Model
-<<<<<<< HEAD
 from django.utils.translation import gettext_lazy as _
 
 
@@ -44,9 +41,6 @@ class SpecialHours(models.Model):
         if self.is_closed:
             return f"Closed on {self.date}: {self.opening_time} - {self.closing_time}"
         return f"Open on {self.date}: {self.opening_time} - {self.closing_time}"
-=======
->>>>>>> eafb986a58cf6441ea3a5ec162772c32a4edb147
-
 
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -90,27 +84,19 @@ class Dish(models.Model):
     class Meta:
         ordering = ['created_at']
         verbose_name_plural = 'dishes'
-
-<<<<<<< HEAD
         permissions = [
             ("can_view_dish", "Может просматривать блюда"),
         ]
-
-=======
->>>>>>> eafb986a58cf6441ea3a5ec162772c32a4edb147
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=300)
     phone = models.CharField(max_length=100)
-<<<<<<< HEAD
     working_hours = models.ManyToManyField(WorkingHours, verbose_name=_("Working hours"))
     special_hours = models.ManyToManyField(SpecialHours, blank=True, verbose_name=_("Special hours"))
-=======
     # todo правильно описать рабочее время
     open_from = models.PositiveSmallIntegerField()
     open_until = models.PositiveSmallIntegerField()
->>>>>>> eafb986a58cf6441ea3a5ec162772c32a4edb147
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

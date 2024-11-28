@@ -1,5 +1,4 @@
 from django.urls import path
-<<<<<<< HEAD
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -25,7 +24,7 @@ urlpatterns = [
     path('order_items/', views.OrderItemList.as_view(), name='order-item-list'),
     path('api/order_item/<int:pk>/', views.OrderItemDetail.as_view(), name='order-item-detail'),
 ]
-=======
+
 from api import views
 from django.conf.urls.static import static
 from django.conf import settings
@@ -59,4 +58,3 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
->>>>>>> eafb986a58cf6441ea3a5ec162772c32a4edb147

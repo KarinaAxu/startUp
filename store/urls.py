@@ -1,17 +1,5 @@
-from django.urls import path
-<<<<<<< HEAD
-from .views import index, dishes, dish_detail, dish_create, dish_update
-
-
-urlpatterns = [
-    path("", index, name="index"),
-    path("dishes/", dishes, name="dishes"),
-    path("dish/<pk>", dish_detail, name="dish_detail"),
-    path("dish/", dish_create, name="dish_create"),
-    path("update_dish/<pk>", dish_update, name="dish_update"),
-]
-=======
 from store import views
+from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -53,4 +41,3 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
->>>>>>> eafb986a58cf6441ea3a5ec162772c32a4edb147

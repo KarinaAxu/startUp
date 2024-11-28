@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
-
-from store.forms import DishForm, UpdateDishForm
-from store.models import Dish
-
-def index(request):
-    return HttpResponse(f"Hello {request.user.username}!")
-
-
-def dishes(request):
-    all_dishes = Dish.objects.all()
-    return render(request, '../templates/store/dishes_list.html', {"all_dishes": all_dishes})
-
-
-def dish_detail(request, pk):
-    dish = Dish.objects.get(pk=pk)
-    return render(request, '../templates/store/dish.html', {'dish': dish})
-
-
-=======
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
@@ -37,13 +15,10 @@ def dish_detail(request, pk):
     dish = Dish.objects.get(pk=pk)
     return render(request, 'store/dish_detail.html', {'dish': dish})
 @login_required
->>>>>>> eafb986a58cf6441ea3a5ec162772c32a4edb147
 def dish_create(request):
     instance = None
     if request.method == 'POST':
         form = DishForm(request.POST)
-<<<<<<< HEAD
-
         if form.is_valid():
             instance = form.save()
             return HttpResponseRedirect("/dishes")
@@ -55,7 +30,6 @@ def dish_update(request, pk):
     if request.method == 'POST':
         form = UpdateDishForm(request.POST)
 
-=======
         if form.is_valid():
             instance = form.save()
             return HttpResponseRedirect("dishes")
@@ -64,15 +38,11 @@ def dish_update(request, pk):
 def dish_update(request, pk):
     if request.method == 'POST':
         form = UpdateDishForm(request.POST)
->>>>>>> eafb986a58cf6441ea3a5ec162772c32a4edb147
         if form.is_valid():
             price = form.cleaned_data['price']
             Dish.objects.filter(pk=pk).update(price=price)
             return HttpResponseRedirect("/dishes")
-<<<<<<< HEAD
-
-    return render(request, '../templates/store/update_dish.html', {'form': UpdateDishForm()})
-=======
+        return render(request, '../templates/store/update_dish.html', {'form': UpdateDishForm()})
     return render(request, 'store/dish_form.html', {'form': UpdateDishForm()})
 @login_required
 def customer_list(request):
@@ -193,4 +163,3 @@ def payment_update(request, pk):
     else:
         form = PaymentForm(instance=payment)
     return render(request, 'store/payment_form.html', {'form': form})
->>>>>>> eafb986a58cf6441ea3a5ec162772c32a4edb147

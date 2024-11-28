@@ -1,24 +1,16 @@
 from django import forms
-<<<<<<< HEAD
-
-from store.models import Dish
-
-=======
 from store.models import Dish, Customer, Courier, Restaurant, Menu, Order, OrderItem, Payment
->>>>>>> eafb986a58cf6441ea3a5ec162772c32a4edb147
 
 class DishForm(forms.ModelForm):
     class Meta:
         model = Dish
-<<<<<<< HEAD
         fields = ('name', 'description', 'price', 'is_available', )
         # exclude = ['description']
 
 
 class UpdateDishForm(forms.Form):
     price = forms.IntegerField()
-=======
-        fields = '__all__'
+    fields = '__all__'
 
 class UpdateDishForm(forms.ModelForm):
     class Meta:
@@ -59,4 +51,3 @@ class PaymentForm(forms.ModelForm):
     class Meta:
         model = Payment
         fields = '__all__'
->>>>>>> eafb986a58cf6441ea3a5ec162772c32a4edb147

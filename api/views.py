@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -85,7 +84,6 @@ class MenuListCreateView(ListCreateAPIView):
     filterset_class = MenuFilter
     ordering_fields = ['name', 'created_at']
 
-
 class MenuRetrieveUpdateDestroyView(RetrieveUpdateDestroyAPIView):
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
@@ -96,7 +94,6 @@ class OrderList(generics.ListAPIView):
     authentication_classes = (JWTAuthentication, )
     permission_classes = (permissions.IsAuthenticated, )
 
-=======
 from rest_framework import generics
 from store.models import Dish, Customer, Courier, Restaurant, Menu, Order, OrderItem, Payment
 from api.serializers import DishSerializer, CourierSerializer, CustomerSerializer, RestaurantSerializer, MenuSerializer, OrderSerializer, OrderItemSerializer, PaymentSerializer
@@ -148,12 +145,10 @@ class MenuDetail(generics.RetrieveAPIView):
 class OrderListCreate(generics.ListCreateAPIView):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
->>>>>>> eafb986a58cf6441ea3a5ec162772c32a4edb147
 
 class OrderDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
-<<<<<<< HEAD
     authentication_classes = (JWTAuthentication, )
     permission_classes = (permissions.IsAuthenticated, )
 
@@ -164,20 +159,15 @@ class OrderItemList(generics.ListAPIView):
     authentication_classes = (JWTAuthentication, )
     permission_classes = (permissions.IsAuthenticated, )
 
-=======
-
 class OrderItemListCreate(generics.ListCreateAPIView):
     queryset = OrderItem.objects.all()
     serializer_class = OrderItemSerializer
->>>>>>> eafb986a58cf6441ea3a5ec162772c32a4edb147
 
 class OrderItemDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = OrderItem.objects.all()
     serializer_class = OrderItemSerializer
-<<<<<<< HEAD
     authentication_classes = (JWTAuthentication, )
     permission_classes = (permissions.IsAuthenticated, )
-=======
 
 class PaymentListCreate(generics.ListCreateAPIView):
     queryset = Payment.objects.all()
@@ -186,4 +176,3 @@ class PaymentListCreate(generics.ListCreateAPIView):
 class PaymentDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Payment.objects.all()
     serializer_class = PaymentSerializer
->>>>>>> eafb986a58cf6441ea3a5ec162772c32a4edb147
