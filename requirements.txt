@@ -7,3 +7,4 @@ django-filter
 django-allauth>=0.50
 dj-rest-auth>=2.1.1
 requests
+pillow
